@@ -30,8 +30,16 @@
             background-color: darkgreen;
             border-style: groove;
         }
-        div{
+        div.paypal{
+            position: absolute;
+            top: 50%;
+            left: 25%;
+            right: 25%;
+            text-align: center;
+        }
+        div.button{
             position: relative;
+            height: auto;
             top: 60%;
             left: 60%;
         }
@@ -46,6 +54,14 @@
         <button class="button">3</button>
         <button class="button">4</button>
     </div>
+    <div class="paypal">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_donations" />
+        <input type="hidden" name="business" value="5TRP5CL7KTCES" />
+        <input type="hidden" name="currency_code" value="USD" />
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+        <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+        </form></div>
     <script src="three.js"></script>
     <script src="OrbitControls.js"></script>
     <script src="OBJLoader.js"></script>
