@@ -4,15 +4,15 @@ var camera, scene, renderer, i=2;
 			init();
 			animate();
             //loadModel();
-            loadModel2();
+            //loadModel2();
 
 			function init() {
 
 				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 10000 );
                 
-			camera.position.y=-300;
-			camera.position.x=-600;
-			camera.position.z=-500;
+			camera.position.y=-1;
+			camera.position.x=-1;
+			camera.position.z=-1;
 
 				scene = new THREE.Scene();
 
@@ -34,11 +34,11 @@ var camera, scene, renderer, i=2;
 			}
 			function cube() {
 
-				var i, n=0, m=0, h=0, e=300;
+				var i, n=0, m=0, h=0, e=3;
 				for(f=0;f<=4;f++){
                 for(i=0;i<=4;i++){
 					var texture = new THREE.TextureLoader().load( 'texures/weerd.jpg' );
-					var geometry = new THREE.BoxBufferGeometry( 200, 200, 200 );
+					var geometry = new THREE.BoxBufferGeometry( 2, 2, 2 );
 					var material = new THREE.MeshBasicMaterial( { map: texture } );
 					if(i!=0){
 						h = 1 + m;
@@ -53,7 +53,7 @@ var camera, scene, renderer, i=2;
 					cube[h].position.z = f*e;
 					for(n=1;n<=4;n++){
 						var texture = new THREE.TextureLoader().load( 'texures/weerd.jpg' );
-						var geometry = new THREE.BoxBufferGeometry( 200, 200, 200 );
+						var geometry = new THREE.BoxBufferGeometry( 2, 2, 2 );
 						var material = new THREE.MeshBasicMaterial( { map: texture } );
 						m = h + n;
 						cube[m] = new THREE.Mesh( geometry, material );
@@ -80,7 +80,7 @@ var camera, scene, renderer, i=2;
 					
                     scene.add(object);
                 })
-            }*/
+            }
             function loadModel2(){
                 var loader = new THREE.OBJLoader();
                 loader.load('uh/horse 1 copy.obj', function (object){
@@ -88,7 +88,7 @@ var camera, scene, renderer, i=2;
 					
                     scene.add(object);
                 })
-			}
+			}*/
 			function animate() {
 			
 				requestAnimationFrame( animate );
